@@ -53,7 +53,7 @@ export default class Dm_lwcDeleteAccount extends LightningElement {
         .catch(error=>{
             const evt = new ShowToastEvent({
                 title: 'Error',
-                message: 'Error: ' + error.body.message,
+                message: 'Error !!!: ' + error.body.message,
                 variant: 'error',
             });
             this.dispatchEvent(evt);
