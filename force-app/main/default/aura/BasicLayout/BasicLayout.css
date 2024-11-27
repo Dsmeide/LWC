@@ -1,0 +1,32 @@
+.THIS .page-layout {
+   
+}
+
+.THIS .header {
+    position: fixed;
+    top: 5.5rem;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 10;
+    background-color: #f3f3f3; /* Example background color for header */
+    
+}
+
+.THIS .main {
+    margin-top: 3.5rem; /* Ensure there's space between header and content */
+}
+
+.THIS .sidebar {
+    height:cal(100vh - 80px); /* Adjust this value to account for the height of the global header and the fixed header */
+    overflow-y: auto;
+    position: relative;
+
+
+}
+
+.THIS .invisible {
+    background-color: transparent ;
+    margin-top: 1rem;
+
+}

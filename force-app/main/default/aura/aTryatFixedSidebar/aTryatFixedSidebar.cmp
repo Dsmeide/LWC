@@ -1,0 +1,96 @@
+<!--
+  @description       : 
+  @author            : meide.dane@principal.com
+  @Team              : GBS
+  @last modified on  : 07-02-2024
+  @last modified by  : meide.dane@principal.com
+-->
+<aura:component implements="lightning:recordHomeTemplate" description="aTryatFixedSidebar">
+    <aura:attribute name="header" type="Aura.Component[]" description="header region"/>
+    <aura:attribute name="main" type="Aura.Component[]" description="Main region"/>
+    <aura:attribute name="sidebar" type="Aura.Component[]" description="Collapsible sidebar region"/>
+    <aura:attribute name="isSidebarCollapsed" type="Boolean" access="PRIVATE" default="false" />
+    <aura:attribute name="isHeaderCollapsed" type="Boolean" access="PRIVATE" default="false" />
+    <aura:attribute name="isHeaderHidden" type="Boolean" access="PRIVATE" default="false" />
+    <aura:attribute name="lastScrollTop" type="Integer" access="PRIVATE" default="0" />
+    <!-- <aura:handler name="init" value="{!this}" action="{!c.doInit}"/> -->
+    <!-- <aura:handler name="render" value="{!this}" action="{!c.onRender}"/> -->
+    <aura:handler event="aura:doneRendering" action="{!c.doneRendering}"/>
+    <!-- <aura:handler event="lightning:tabClosed" action="{! c.onTabClosed }"/>  -->
+    <!-- <aura:handler event="lightning:tabCreated" action="{! c.onTabCreated }"/> -->
+    
+    
+    <!-- <lightning:workspaceAPI aura:id="workspace"/> -->
+<!-- <div class="page-container" onscroll="{!c.handleScroll}">    -->
+    
+<div class="container">
+    <!-- <div class="container"> -->
+    <!-- HEADER SECTION -->
+    <lightning:layout>
+        <lightning:layoutItem class="headerContainer" size="12">
+        <!-- <lightning:layoutItem class="{! v.isHeaderHidden ? ' ' : ' slds-hide'}" size="12"> -->
+            <!-- <div class="header slds-card slds-has-top-magnet">{!v.header}</div> -->
+            <!-- <div class="{! ( v.isHeaderCollapsed ? 'header headerHide' : 'header slds-card slds-has-top-magnet ') + ( v.isHeaderHidden ? ' slds-hide' : ' ')}">{!v.header}</div> -->
+            <div class="{! ( v.isHeaderCollapsed ? 'slds-hide' : ' header slds-card slds-has-top-magnet') + ( v.isHeaderHidden ? ' slds-hide' : ' ')}">{!v.header}</div>
+        </lightning:layoutItem>
+    </lightning:layout>
+    <!-- HEADER TOGGLE SECTION -->
+    <lightning:layout>
+        <lightning:layoutItem size="12" class="headerToggleColumn">
+                <lightning:buttonIcon onclick="{!c.headerToggleSection}"
+                                      class="headerToggleStyle design-allow-interaction toggle"
+                                      variant="border-filled"
+                                      iconName="{!v.isHeaderCollapsed ? 'utility:chevrondown' : 'utility:chevronup'}" 
+                                      alternativeText="{!v.isHeaderCollapsed ? 'Expand Header' : 'Collapse Header'}" />
+        </lightning:layoutItem>
+    </lightning:layout>
+    <!-- TWO COLUMN SECTION -->
+    <lightning:layout class="twoColumnsStyle">
+        <!-- MAIN SECTION -->
+       <!-- <lightning:layoutItem aura:id="main" class="flipped mainStyle" flexibility="grow" > -->
+        <lightning:layoutItem flexibility="grow">
+            <div aura:id="main2" class="flipped mainStyle">
+                 <div  class="flippedback" >
+                   {!v.main}
+                   <!-- MAIN SECTION SCROLL TO TOP BUTTON-->
+                   <lightning:buttonIcon onclick="{!c.scrollMainToTop}"
+                                      class="scroll-main-to-top-button design-allow-interaction toggle"
+                                      variant="border-filled"
+                                      iconName="utility:chevronup" 
+                                      alternativeText="Scroll main to Top" />
+                </div>
+            </div>
+        </lightning:layoutItem>
+        <!-- SIDEBAR TOGGLE -->
+        <lightning:layoutItem  class="toggleContainer" flexibility="no-flex">
+                <lightning:buttonIcon onclick="{!c.toggleSection}"
+                                      class="toggleStyle design-allow-interaction toggle"
+                                      variant="border-filled"
+                                      iconName="{!v.isSidebarCollapsed ? 'utility:chevronleft' : 'utility:chevronright'}" 
+                                      alternativeText="{!v.isSidebarCollapsed ? 'Expand Sidebar' : 'Collapse Sidebar'}" />
+            </lightning:layoutItem>
+            <!-- PAGE CONTAINER SCROLL TO TOP BUTTON-->
+            <lightning:layoutItem  class="toggleContainer" flexibility="no-flex">
+                <lightning:buttonIcon onclick="{!c.scrollToTop}"
+                                      class="scroll-to-top-button design-allow-interaction toggle"
+                                      variant="border-filled"
+                                      iconName="utility:chevronup" 
+                                      alternativeText="Scroll to Top" />
+            </lightning:layoutItem>
+            <!-- SIDEBAR SECTION -->
+        <lightning:layoutItem class="{! sidebarItem + (v.isSidebarCollapsed ? ' slds-hide' : ' ')}" size="12" smallDeviceSize="12" mediumDeviceSize="4" largeDeviceSize="4">
+        <!-- <lightning:layoutItem class="{! sidebarItem + (v.isSidebarCollapsed ? ' slds-hide' : ' ')}" > -->
+            <div aura:id="sidebar" class="sideStyle" >
+                {!v.sidebar}
+                <lightning:buttonIcon onclick="{!c.scrollSidebarToTop}"
+                                      class="scroll-main-to-top-button design-allow-interaction toggle"
+                                      variant="border-filled"
+                                      iconName="utility:chevronup" 
+                                      alternativeText="Scroll main to Top" />
+                <button label="click me" class="scroll-main-to-top-button" onclick="{!c.scrollSidebarToTop}"/>
+            </div>
+        </lightning:layoutItem>
+    </lightning:layout>
+</div>
+
+</aura:component>

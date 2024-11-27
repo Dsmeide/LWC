@@ -1,0 +1,30 @@
+<template>
+    <div class="page-layout">
+        <!-- Fixed Header -->
+        <div class="header slds-p-around_medium">
+            <slot name="header"></slot>
+        </div>
+
+        <!-- Main Content -->
+        <div class="slds-grid slds-p-around_medium content-area">
+            <div class="main-column slds-col slds-size_1-of-1 slds-medium-size_2-of-3">
+                <slot name="main"></slot>
+            </div>
+            
+            <!-- Toggle Button -->
+            <div class="toggle-button-container">
+                <lightning-button-icon 
+                    icon-name={toggleIcon}
+                    alternative-text={toggleAltText}
+                    onclick={toggleSidebar}
+                    class="slds-button slds-button_icon-border-filled"
+                ></lightning-button-icon>
+            </div>
+            
+            <!-- Sidebar -->
+            <div class="sidebar slds-col slds-size_1-of-1 slds-medium-size_1-of-3" if:false={isSidebarCollapsed}>
+                <slot name="sidebar"></slot>
+            </div>
+        </div>
+    </div>
+</template>

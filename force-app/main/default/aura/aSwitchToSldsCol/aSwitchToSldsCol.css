@@ -1,0 +1,217 @@
+/* .THIS .headerContainer {
+    overflow: hidden;
+    transition: height 1s ease-in-out;
+    height: 300px;
+} */
+
+.THIS .header {
+    margin-top: -12px !important;
+    margin-bottom: 11px;
+} 
+
+.THIS .headerToggleColumn {
+    margin-top: -20px;
+}
+
+.THIS .headerToggleStyle {
+    width: 100%;
+    height: 17px;
+    background: transparent;
+    color: rgb(216, 226, 239);
+    border: none;
+    padding-top: 6.5px;
+    outline: none;
+    box-shadow: none;
+}
+
+.THIS .headerToggleStyle:hover {
+    color: white;
+}
+
+.THIS .headerToggleStyle .slds-button_icon:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.THIS .mainStyle {
+    padding-bottom: 16rem;
+    height: 86.5vh;
+    overscroll-behavior: contain;
+    scroll-behavior: smooth;
+    display: flex;
+    flex: 1;
+}
+
+.THIS .mainSidebarContainer {
+    display: flex;
+    flex: 1;
+}
+
+.THIS .flipped {
+    direction: rtl;
+    margin-left: -5px;
+    border-radius: 8px;
+}
+
+.THIS .flippedback {
+    direction: ltr;
+}
+
+.THIS .scroll-main-to-top-button {
+    width: 100%;
+    height: 17px;
+    background: white;
+    color: lightgray;
+    border: none;
+    margin-top: -3px;
+    outline: none;
+    box-shadow: none;
+}
+
+.THIS .scroll-main-to-top-button:hover {
+    color: white;
+    background: rgba(221, 221, 221, 0.5);
+    border: 1px solid lightgray;
+}
+
+.THIS .mainStyle::-webkit-scrollbar {
+    width: 6px;
+}
+
+.THIS .mainStyle::-webkit-scrollbar-thumb {
+    background: white;
+    border-radius: 5px;
+}
+
+.THIS .mainStyle::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 5px;
+}
+
+.THIS .mainStyle::-webkit-scrollbar-track:hover {
+    background: lightgray;
+    border-radius: 5px;
+}
+
+.THIS .mainStyle::-webkit-scrollbar-thumb:hover {
+    background: #005fbf;
+    border-radius: 5px;
+}
+
+.THIS .scroll-to-top-button {
+    position: fixed;
+    bottom: 40px;
+    right: 0px;
+    width: 100%;
+    height: 17px;
+    background: transparent;
+    color: #005fbf;
+    z-index: 10;
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.THIS .scroll-to-top-button:hover {
+    color: white;
+    background: rgba(221, 221, 221, 0.5);
+    border: 1px solid lightgray;
+}
+
+.THIS .toggleStyle {
+    position: sticky;
+    top: 40px;
+    height: 86.5vh;
+    width: 11px;
+    z-index: 10;
+    background: transparent;
+    color: rgb(216, 226, 239);
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.THIS .toggleStyle .slds-button_icon:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.THIS .toggleStyle:hover {
+    color: white;
+}
+
+.THIS .sideStyle {
+    position: sticky;
+    top: 95px;
+    overflow-y: auto;
+    height: 86.5vh;
+    padding-bottom: 40rem;
+    margin-right: -5px;
+    border-radius: 8px;
+    overscroll-behavior: contain;
+    margin-bottom: 1rem;
+    scroll-behavior: smooth;
+}
+
+.THIS .sideStyle::-webkit-scrollbar {
+    width: 6px;
+}
+
+.THIS .sideStyle::-webkit-scrollbar-thumb {
+    background: white;
+    border-radius: 5px;
+}
+
+.THIS .sideStyle::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 5px;
+}
+
+.THIS .sideStyle::-webkit-scrollbar-track:hover {
+    background: lightgray;
+    border-radius: 5px;
+}
+
+.THIS .sideStyle::-webkit-scrollbar-thumb:hover {
+    background: #005fbf;
+    border-radius: 5px;
+}
+
+@media (max-width: 48rem) {
+    .THIS .mainStyle {
+        padding-bottom: 0;
+        overflow-y: unset;
+        height: auto;
+    }
+
+    .THIS .flipped {
+        margin-left: 0px;
+    }
+
+    .THIS .scroll-main-to-top-button {
+        width: 100%;
+        height: 17px;
+        background: white;
+        color: lightgray;
+        border: none;
+        margin-top: -3px;
+        outline: none;
+        box-shadow: none;
+        visibility: hidden;
+    }
+
+    .THIS .toggleStyle {
+        height: 17px;
+        width: 100%;
+        padding-bottom: 4px;
+        visibility: hidden;
+    }
+
+    .THIS .sideStyle {
+        padding-bottom: 0;
+        overflow-y: unset;
+        height: auto;
+        margin-right: 0px;
+        width: auto;
+    }
+}

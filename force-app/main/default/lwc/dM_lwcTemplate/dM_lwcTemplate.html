@@ -1,0 +1,85 @@
+<template>
+    <!-- <lightning-card name="lwcComponent" title="Highest Number Finder" icon-name="standard:account" class="slds-p-around_large">
+    <div class="slds-p-around_large">
+        <lightning-input name="firstNumb" label="First Number" onchange={handleChange} value={firstNumb}></lightning-input>
+        <lightning-input name="secNumb" label="Second Number" onchange={handleChange2} value={secNumb}></lightning-input>
+        <lightning-input name="thirdNumb" label="Third Number" onchange={handleChange3} value={thirdNumb}></lightning-input>
+        <lightning-button-group>
+            <lightning-button label="Calculate" variant="brand" onclick={calc}></lightning-button>
+            <lightning-button label="Clear" onclick={clear}></lightning-button>
+            
+        </lightning-button-group>
+        <p>Result = {result}</p>
+        <p>Numbs = {firstNumb}, {secNumb}, {thirdNumb}</p>
+    </div>
+    </lightning-card> -->
+    <lightning-card name="lwcComponent" title="Highest Number Finder" icon-name="standard:account" class="slds-p-around_large">
+        <div class="slds-p-around_large">
+            <lightning-input name="firstNumb" label="First Number" onchange={handleChangeData} value={firstNumb}></lightning-input>
+            <lightning-input name="secNumb" label="Second Number" onchange={handleChangeData} value={secNumb}></lightning-input>
+            <lightning-input name="thirdNumb" label="Third Number" onchange={handleChangeData} value={thirdNumb}></lightning-input>
+            <lightning-button-group>
+                <lightning-button label="Calculate" variant="brand" onclick={calc}></lightning-button>
+                <lightning-button label="Clear" onclick={clear}></lightning-button>
+                
+            </lightning-button-group>
+            <p>Result = {result}</p>
+            <p>Numbs = {firstNumb}, {secNumb}, {thirdNumb}</p>
+        </div>
+        </lightning-card>
+
+        //looping using for each example.  Requires a for:item attribute.
+
+        <lightning-card name="lwcComponent" title="Animal List" icon-name="standard:account" class="slds-p-around_large">
+            <template for:each={animals} for:item="animal">
+                <p key={animal}> {animal} </p>
+            </template>
+        </lightning-card>
+        
+        //looping using iterator example.  Does not require a for:item attribute like the for:each does.
+        <lightning-card name="lwcComponent" title="Fruit List" icon-name="standard:account" class="slds-p-around_large">
+            <template iterator:it={fruits}>
+                <p key={it.value}> {it.value} </p>
+            </template>
+        </lightning-card>
+
+        <lightning-card name="lwcComponent" title="Emails" icon-name="standard:account" class="slds-p-around_large">
+            <template iterator:it={evenNumbers}>
+                <p key={it.value}> {it.value} </p>
+            </template>
+        </lightning-card>
+
+        <lightning-card name="lwcComponent" title="Student Details" icon-name="standard:account" class="slds-p-around_large">
+            <div class="slds-p-left_large">
+                Student Name:&nbsp; {student.Name}<p></p>
+
+                Student Age:  {student.Age}  <br>
+                
+                Student Salary:  {student.Salary}
+            </div>
+        </lightning-card>
+
+        <!-- <lightning-card name="lwcComponent" title="Students Details" icon-name="standard:account" class="slds-p-around_large">
+            <div class="slds-p-left_large">
+                <template for:each={students} for:item="st">
+                    <p key={st.Name}>{st.Name}</p>
+                    <p key={st.Age}>{st.Age}</p>
+                    <p key={st.Salary}>{st.Salary}</p>
+                    
+            
+                </template>
+            </div>
+        </lightning-card> -->
+        <lightning-card name="lwcComponent" title="Students Details" icon-name="standard:account" class="slds-p-around_large">
+            <div class="slds-p-left_large">
+                <template for:each={students} for:item="st">
+                    <div key={st.Id} class="slds-grid slds-wrap slds-m-bottom_small">
+                        <p class="slds-col slds-size_1-of-12">{st.Name}</p>
+                        <p class="slds-col slds-size_1-of-12">{st.Age}</p>
+                        <p class="slds-col slds-size_1-of-12">{st.Salary}</p>
+                    </div>
+                </template>
+            </div>
+        </lightning-card>
+        
+</template>

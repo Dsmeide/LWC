@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="Latest 5 Accounts List">
+        <lightning-button label="Delete Account??" onclick={handleDelete}></lightning-button>
+        <lightning-datatable 
+                            key-field="Id" 
+                            data={accountList}
+                            columns={cols} 
+                            max-row-selection="1"
+                            onrowselection={handleSelection}>
+        </lightning-datatable>
+    </lightning-card>
+</template>

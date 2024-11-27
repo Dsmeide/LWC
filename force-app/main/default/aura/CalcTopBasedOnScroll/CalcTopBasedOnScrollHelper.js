@@ -1,0 +1,5 @@
+({
+    checkSubtabStatus : function(component) {
+        
+    }
+})

@@ -1,0 +1,79 @@
+<aura:component implements="lightning:recordHomeTemplate" description="aSwitchToSldsCol">
+    <aura:attribute name="header" type="Aura.Component[]" description="header region"/>
+    <aura:attribute name="main" type="Aura.Component[]" description="Main region"/>
+    <aura:attribute name="sidebar" type="Aura.Component[]" description="Collapsible sidebar region"/>
+    <aura:attribute name="isSidebarCollapsed" type="Boolean" access="PRIVATE" default="false" />
+    <aura:attribute name="isHeaderCollapsed" type="Boolean" access="PRIVATE" default="false" />
+    <aura:attribute name="isHeaderHidden" type="Boolean" access="PRIVATE" default="false" />
+    <aura:attribute name="lastScrollTop" type="Integer" access="PRIVATE" default="0" />
+    <!-- <aura:handler event="aura:afterRender" action="{!c.afterRender}"/> -->
+    <lightning:workspaceAPI aura:id="workspace"/>
+    <!-- <aura:handler event="aura:doneRendering" action="{!c.doneRendering}"/> -->
+    
+    <div class="slds-grid slds-wrap container">
+        <!-- HEADER SECTION -->
+        <div class="slds-col slds-size_12-of-12 headerContainer">
+            <div class="{! ( v.isHeaderCollapsed ? 'slds-hide' : ' header slds-card slds-has-top-magnet') + ( v.isHeaderHidden ? ' slds-hide' : ' ')}">
+                {!v.header}
+            </div>
+        </div>
+
+        <!-- HEADER TOGGLE SECTION -->
+        <div class="slds-col slds-size_12-of-12 headerToggleColumn">
+            <lightning:buttonIcon onclick="{!c.headerToggleSection}"
+                                  class="headerToggleStyle design-allow-interaction toggle"
+                                  variant="border-filled"
+                                  iconName="{!v.isHeaderCollapsed ? 'utility:chevrondown' : 'utility:chevronup'}" 
+                                  alternativeText="{!v.isHeaderCollapsed ? 'Expand Header' : 'Collapse Header'}" />
+        </div>
+
+        <!-- MAIN AND SIDEBAR SECTION -->
+        <div class="slds-grid slds-wrap slds-gutters mainSidebarContainer">
+            <!-- MAIN SECTION -->
+            <div aura:id="mainId" class="mainStyle" onscroll="{!c.handleScroll}">
+                <div class="flippedback">
+                    {!v.main}
+
+                    <!-- MAIN SECTION SCROLL TO TOP BUTTON-->
+                    <lightning:buttonIcon onclick="{!c.scrollMainToTop}"
+                                          class="scroll-main-to-top-button design-allow-interaction toggle"
+                                          variant="border-filled"
+                                          iconName="utility:chevronup" 
+                                          alternativeText="Scroll main to Top" />
+                </div>
+            </div>
+
+            <!-- SIDEBAR TOGGLE -->
+            <div class="slds-col slds-size_1-of-1 slds-medium-size_3-of-3 toggleContainer">
+                <lightning:buttonIcon onclick="{!c.toggleSection}"
+                                      class="toggleStyle design-allow-interaction toggle"
+                                      variant="border-filled"
+                                      iconName="{!v.isSidebarCollapsed ? 'utility:chevronleft' : 'utility:chevronright'}" 
+                                      alternativeText="{!v.isSidebarCollapsed ? 'Expand Sidebar' : 'Collapse Sidebar'}" />
+            </div>
+
+            <!-- SIDEBAR SECTION -->
+            <div class="{! (v.isSidebarCollapsed ? 'slds-hide' : 'slds-col slds-size_1-of-1 slds-medium-size_1-of-3') }">
+                <div aura:id="sidebarId" class="sideStyle">
+                    {!v.sidebar}
+
+                    <!-- SIDEBAR SCROLL BUTTON -->
+                    <lightning:buttonIcon onclick="{!c.scrollSidebarToTop}"
+                                          class="scroll-main-to-top-button design-allow-interaction toggle"
+                                          variant="border-filled"
+                                          iconName="utility:chevronup" 
+                                          alternativeText="Scroll main to Top" />
+                </div>
+            </div>
+        </div>
+
+        <!-- PAGE CONTAINER SCROLL TO TOP BUTTON -->
+        <div class="slds-col slds-size_1-of-1 slds-medium-size_3-of-3 toggleContainer">
+            <lightning:buttonIcon onclick="{!c.scrollToTop}"
+                                  class="scroll-to-top-button design-allow-interaction toggle"
+                                  variant="border-filled"
+                                  iconName="utility:chevronup" 
+                                  alternativeText="Scroll to Top" />
+        </div>
+    </div>
+</aura:component>

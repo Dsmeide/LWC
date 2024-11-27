@@ -1,0 +1,26 @@
+<aura:component implements="lightning:recordHomeTemplate" description="twoColumnFixedScrollable">
+    <aura:attribute name="main" type="Aura.Component[]" description="Main region"/>
+    <aura:attribute name="sidebar" type="Aura.Component[]" description="Collapsible sidebar region"/>
+    <aura:attribute name="isSidebarCollapsed" type="Boolean" access="PRIVATE" default="false" />
+
+    <div class="slds-grid">
+        <div class="slds-col" flexibility="auto" >
+            <div>
+                {!v.main}
+            </div>
+        </div>
+        <lightning:layoutItem flexibility="no-flex">
+            <lightning:buttonIcon onclick="{!c.toggleSection}"
+                                  class="design-allow-interaction toggle slds-p-around_xxx-small slds-m-horizontal_xx-small"
+                                  variant="border-filled"
+                                  iconName="{!v.isSidebarCollapsed ? 'utility:chevronleft' : 'utility:chevronright'}" 
+                                  alternativeText="{!'Expand Sidebar'}" />
+        </lightning:layoutItem>
+        <lightning:layoutItem flexibility="no-flex" class="{! v.isSidebarCollapsed ? ' slds-hide' : '' }" size="4">
+            <div class="slds-scrollable_y" style="height: calc(100vh - 2rem); overflow-y: auto;">
+                {!v.sidebar}
+            </div>
+        </lightning:layoutItem>
+        
+    </div>
+</aura:component>

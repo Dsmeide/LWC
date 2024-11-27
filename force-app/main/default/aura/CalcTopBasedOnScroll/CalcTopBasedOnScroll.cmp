@@ -1,0 +1,41 @@
+<!--
+  @description       : 
+  @author            : meide.dane@principal.com
+  @Team              : GBS
+  @last modified on  : 06-08-2024
+  @last modified by  : meide.dane@principal.com
+-->
+<aura:component implements="lightning:recordHomeTemplate" description="CalcTopBasedOnScroll">
+    <aura:attribute name="header" type="Aura.Component[]" description="header region"/>
+    <aura:attribute name="main" type="Aura.Component[]" description="Main region"/>
+    <aura:attribute name="sidebar" type="Aura.Component[]" description="Collapsible sidebar region"/>
+    <aura:attribute name="isSidebarCollapsed" type="Boolean" access="PRIVATE" default="false" />
+    <lightning:workspaceAPI aura:id="workspace"/>
+    <aura:handler event="aura:doneRendering" action="{!c.doneRendering}"/>
+    <!-- <aura:handler name="init" value="{!this}" action="{!c.doInit}"/> -->
+    <!-- <aura:handler name="render" value="{!this}" action="{!c.onRender}"/> -->
+    
+    
+<div>
+    <!-- <Lightning:layout> -->
+        <!-- <lightning:layoutItem flexibility="auto"> -->
+            <div aura:id="head" class="header">{!v.header}</div>
+        <!-- </lightning:layoutItem> -->
+    <!-- </Lightning:layout> -->
+    <Lightning:layout>
+       <lightning:layoutItem flexibility="auto">
+            <div class="mainStyle slds-var-m-top_x-small">{!v.main}</div>
+        </lightning:layoutItem>
+        <lightning:layoutItem  flexibility="no-flex">
+                <lightning:buttonIcon onclick="{!c.toggleSection}"
+                                      class="toggleStyle design-allow-interaction toggle slds-var-m-horizontal_xxx-small slds-var-m-top_x-small"
+                                      variant="border-filled"
+                                      iconName="{!v.isSidebarCollapsed ? 'utility:chevronleft' : 'utility:chevronright'}" 
+                                      alternativeText="{!v.isSidebarCollapsed ? 'Expand Sidebar' : 'Collapse Sidebar'}" />
+            </lightning:layoutItem>
+        <lightning:layoutItem class="{! v.isSidebarCollapsed ? ' slds-hide' : '' }" size="{! $Browser.isDesktop? '4' : '6'}">
+            <div aura:id="sidebar" class="sideStyle slds-var-m-top_x-small slds-var-p-bottom_x-large" >{!v.sidebar}</div>
+        </lightning:layoutItem>
+    </Lightning:layout>
+</div>
+</aura:component>

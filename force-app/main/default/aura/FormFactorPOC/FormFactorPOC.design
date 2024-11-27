@@ -1,0 +1,35 @@
+<design:component label="Form Factor POC">
+    <flexipage:template >
+        <flexipage:region name="header" defaultWidth="LARGE" />
+        <flexipage:region name="main" defaultWidth="LARGE" />
+        <flexipage:region name="sidebar" defaultWidth="SMALL" />
+        <!-- The default width for the "left" region is "MEDIUM". In tablets,
+        the width is "SMALL" -->
+            <!-- <flexipage:region name="header" label="header" defaultWidth="LARGE">
+                <flexipage:formFactor type="LARGE" width="LARGE" />
+            </flexipage:region>
+
+            <flexipage:region name="main" label="main" defaultWidth="LARGE">
+            <flexipage:formFactor type="LARGE" width="LARGE"/>
+            </flexipage:region>
+
+            <flexipage:region name="sidebar" label="sidebar" defaultWidth="LARGE">
+            <flexipage:formFactor type="LARGE" width="SMALL"/>
+            <flexipage:formFactor type="MEDIUM" width="MEDIUM"/>
+            <flexipage:formFactor type="SMALL" width="LARGE"/>
+            </flexipage:region> -->
+       </flexipage:template>
+    
+</design:component>
+
+
+<!-- <design:supportedFormFactors>
+        <design:supportedFormFactor type="LARGE"/>
+        
+        <design:supportedFormFactor type="SMALL"/>
+    </design:supportedFormFactors>
+    <flexipage:template>
+        <flexipage:region name="header" defaultWidth="LARGE" />
+        <flexipage:region name="main" defaultWidth="LARGE" />
+        <flexipage:region name="sidebar" defaultWidth="SMALL" />
+    </flexipage:template> -->

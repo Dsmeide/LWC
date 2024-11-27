@@ -1,0 +1,23 @@
+.THIS .sideStyle {
+    position: sticky;
+    top: 60px; /* Default value; will be dynamically updated */
+    overflow-y: auto;
+    height: 80vh;
+}
+
+.THIS .toggleStyle {
+    position: sticky;
+    top: 60px; /* Default value; will be dynamically updated */
+    height: 100vh;
+    width: 13px;
+}
+
+.THIS .mainStyle {
+    padding-bottom: 2rem;
+}
+
+.THIS .headerStyle {
+    position: sticky;
+    top: 60px; /* Default value; will be dynamically updated */
+    z-index: 10;
+}

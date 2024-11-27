@@ -1,0 +1,68 @@
+.THIS .sideStyle{
+    /* position: fixed; */
+    /* padding-bottom: 6.8rem; */
+    /* overflow-y: auto; */
+    /* height: 90dvh; */
+    margin-top: .2rem;
+    /* width: 32.5% */
+  
+}
+.THIS .card {
+    opacity: 0;
+    /* transition: opacity 0.2s ease-in-out; */
+}
+
+.THIS .card.show {
+    opacity: 1;
+}
+.THIS .scrollable-content {
+    overscroll-behavior: contain;
+    overflow-y: auto;
+    height:86vh;
+}
+.THIS .toggleStyle {
+    position: sticky;
+    top:40px;
+    height:100%;
+    width: 13px;
+    margin-top: 3.5rem;
+    padding-bottom: 13rem;
+
+}
+
+.THIS .mainStyle{
+    padding-bottom: 55rem;
+    height: 81vh;
+    /* margin-top: 3.5rem; */
+}
+
+.THIS .headerStyle {
+    /* position: sticky;
+    top: 0px; */
+     /* margin-top: -12px; */
+    /* padding-right:2.5rem; */
+    /* width: 100%; */
+    z-index: 10;
+}
+.THIS .headerStyleWithSubtab {
+    position: sticky;
+    top: 120px;
+    z-index: 10;
+}
+
+/* .THIS .sideStyleWithSubtab {
+    position: sticky;
+    top: 8.3rem;
+    overflow-y: auto;
+    height: 80dvh;
+
+}
+.THIS .sideStyle{
+    position: fixed;
+    padding-bottom: 6.8rem;
+    overflow-y: auto;
+    height: 81dvh;
+    margin-top: 3.5rem;
+    width: 32.5%
+  
+} */

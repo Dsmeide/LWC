@@ -1,0 +1,82 @@
+/* .THIS {
+    --scroll: 0;
+} */
+/* .THIS.html {
+    scrollbar-width: thin;
+} */
+.THIS .toggleStyle {
+    position: sticky;
+    top: 40px;
+    /* margin-top: 60px; */
+    height:81dvh;
+    width: 13px;
+    padding-bottom: 13rem;
+
+}
+
+.THIS .mainStyle{
+    padding-bottom: 2rem;
+    /* margin-top: 60px; */
+    /* overflow-y: auto;
+    height: 81vh; */
+}
+
+.THIS .header {
+    position: sticky;
+    top: 90px;
+    /* margin-top: -12px; */
+    /* padding-right: 40px;
+    width: 100%; */
+    z-index: 10;
+} 
+
+
+/* .THIS .headerStyleWithSubtab {
+    position: sticky;
+    top: 8.0rem;
+    z-index: 10;
+}  */
+
+.THIS .sideStyle{
+    /* position: fixed; */
+    /* top: 9.3rem; */
+    overflow-y: auto;
+    height: 81dvh;
+    /* margin-top: 60px; */
+    padding-bottom: 30px;
+  
+}
+.THIS .headerStyleWithSubtab {
+    position: sticky;
+    top: 8.0rem;
+    z-index: 10;
+} 
+/* .THIS .sideStyleWithSubtab {
+    position: sticky;
+    top: 11.8rem;
+    overflow-y: auto;
+    height: 80dvh;
+
+} */
+/* .THIS .headerStyle {
+    position: sticky;
+    top: 90px;
+    z-index: 10;
+} 
+
+
+
+.THIS .sideStyle{
+    position: sticky;
+    top: 9.3rem;
+    overflow-y: auto;
+    height: 80dvh;
+  
+}
+.THIS .sideStyleWithSubtab {
+    position: sticky;
+    top: 11.8rem;
+    overflow-y: auto;
+    height: 80dvh;
+
+} */

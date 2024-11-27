@@ -1,0 +1,36 @@
+<aura:component implements="lightning:recordHomeTemplate" description="Basic Record Page Layout">
+    <aura:attribute name="header" type="Aura.Component[]" description="Header region" />
+    <aura:attribute name="invisheader" type="Aura.Component[]" description="invisHeader region" />
+    <aura:attribute name="main" type="Aura.Component[]" description="Main region" />
+    <aura:attribute name="sidebar" type="Aura.Component[]" description="Sidebar region" />
+
+    <!-- Main Layout Container -->
+    <div class="page-layout">
+        <!-- Header -->
+        <div class="header">
+            {!v.header}
+        </div>
+        <!--Invis Header-->
+        <div class="slds-grid">
+            <div class="slds-col slds-size_12-of-12 invisible">
+            {!v.invisheader}
+            </div>
+        </div>
+        <!-- Main Content -->
+        <div class="slds-grid">
+            <!-- Main Section -->
+            <div class="main mains slds-col" flexibility="auto">
+                <div>
+                    {!v.main}
+                </div>
+            </div>
+            
+            <!-- Sidebar -->
+            <div class="main slds-col slds-size_3-of-12">
+                <div class="sidebar">
+                    {!v.sidebar}
+                </div>
+            </div>
+        </div>
+    </div>
+</aura:component>

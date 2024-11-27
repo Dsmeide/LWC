@@ -1,0 +1,253 @@
+/* .THIS .headerContainer {
+    overflow:hidden;
+    transition: height 1s ease-in-out;
+    height: 300px;
+} */
+
+/* -----------------------HEADER SECTION------------------------ */
+.THIS .header {
+    margin-top: -12px !important;
+    margin-bottom: 11px;
+   /* transition: height .1s ease-in-out;
+   height: 100%;
+   overflow: hidden; */
+} 
+/* .THIS .headerHide {
+    height: 0;
+    overflow: hidden;
+    transition: height .2s ease-in-out;
+} */
+
+/* .THIS .header-show {
+    transition: height 1.3s ease, opacity 1.3s ease;
+    height: 100%;
+    opacity: 1;
+} */
+
+/* -----------------------HEADER TOGGLE SECTION------------------------ */
+
+.THIS .headerToggleColumn {
+    margin-top: -20px;
+}
+
+.THIS .headerToggleStyle {
+    width: 100%;
+    height: 17px;
+    background: transparent;
+    color:rgb(216, 226, 239);
+    border: none;
+    padding-top: 6.5px;
+    outline: none;
+    box-shadow: none;
+}
+
+.THIS .headerToggleStyle:hover {
+    color:white;
+}
+
+.THIS .headerToggleStyle .slds-button_icon:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+/* -----------------------MAIN------------------------ */
+
+
+.THIS .mainStyle{
+    padding-bottom: 16rem;
+    /* overflow-y: auto; */
+    height: 86.5dvh;
+    overscroll-behavior: contain;
+    scroll-behavior: smooth;
+}
+
+.THIS .flipped {
+    direction: rtl;
+    margin-left:-5px;
+    border-radius: 8px;
+}
+
+.THIS .flippedback {
+    direction:ltr;
+}
+
+.THIS .scroll-main-to-top-button {
+    width: 100%;
+    height: 17px;
+    background: white;
+    color:lightgray;
+    border: none;
+    margin-top: -3px;
+    outline: none;
+    box-shadow: none;
+}
+.THIS .scroll-main-to-top-button:hover {
+    color: white;
+    background: rgba(221, 221, 221, 0.5);
+    border: 1px solid lightgray;
+}
+
+.THIS .mainStyle::-webkit-scrollbar {
+    width: 6px;
+}
+
+.THIS .mainStyle::-webkit-scrollbar-thumb {
+    background: white;
+    border-radius: 5px;
+}
+
+.THIS .mainStyle::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 5px;
+}
+
+.THIS .mainStyle::-webkit-scrollbar-track:hover {
+    background: lightgray;
+    border-radius: 5px;
+}
+
+.THIS .mainStyle::-webkit-scrollbar-thumb:hover {
+    background: #005fbf;
+    border-radius: 5px;
+}
+
+/* -----------------------TOGGLE------------------------ */
+.THIS .scroll-to-top-button {
+    position: fixed;
+    bottom:40px;
+    right:0px;
+    width: 100%;
+    height: 17px;
+    background: transparent;
+    color: #005fbf;
+    z-index: 10;
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+.THIS .scroll-to-top-button:hover {
+    color: white;
+    background: rgba(221, 221, 221, 0.5);
+    border: 1px solid lightgray;
+    
+}
+
+
+.THIS .toggleStyle {
+    position: sticky;
+    top: 40px;
+    height:86.5dvh;
+    width: 11px;
+    z-index: 10;
+    background: transparent;
+    color:rgb(216, 226, 239);
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.THIS .toggleStyle .slds-button_icon:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.THIS .toggleStyle:hover {
+    color:white;
+}
+
+/* -----------------------SIDEBAR------------------------ */
+/* .THIS .sidebarItem {
+    width: 83%;
+} */
+.THIS .sideStyle {
+    /* width: 33dvw; */
+    position:sticky;
+    top: 95px;
+    overflow-y: auto;
+    height: 86.5dvh;
+    padding-bottom: 40rem;
+    margin-right:-5px;
+    border-radius: 8px;
+    overscroll-behavior: contain;
+    margin-bottom: 1rem;
+    scroll-behavior: smooth;
+}
+
+.THIS .sideStyle::-webkit-scrollbar {
+    width: 6px;
+}
+
+.THIS .sideStyle::-webkit-scrollbar-thumb {
+    background: white;
+    border-radius: 5px;
+}
+
+.THIS .sideStyle::-webkit-scrollbar-track {
+    background: transparent;
+    border-radius: 5px;
+}
+
+.THIS .sideStyle::-webkit-scrollbar-track:hover {
+    background: lightgray;
+    border-radius: 5px;
+}
+
+.THIS .sideStyle::-webkit-scrollbar-thumb:hover {
+    background: #005fbf;
+    border-radius: 5px;
+}
+
+/* 50rem */
+
+ @media (max-width: 48rem) {
+    .THIS .twoColumnsStyle {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .THIS .mainStyle {
+        padding-bottom: 0;
+        overflow-y:unset;
+        height:auto;
+    }
+
+    .THIS .flipped {
+        margin-left:0px;
+    }
+
+    .THIS .scroll-main-to-top-button {
+        width: 100%;
+        height: 17px;
+        background: white;
+        color:lightgray;
+        border: none;
+        margin-top: -3px;
+        outline: none;
+        box-shadow: none;
+        visibility: hidden;
+    }
+
+    .THIS .toggleStyle {
+        height: 17px;
+        width: 100%;
+        padding-bottom: 4px;
+        visibility: hidden;
+    }
+
+    .THIS .sideStyle {
+        padding-bottom: 0;
+        overflow-y:unset;
+        height:auto;
+        margin-right: 0px;
+        width:auto;
+    }
+
+ }
+
+ .THIS [lwc-6ct7qgg1o86-host] records-form-footer.slds-docked-form-footer.stickyFooter[lwc-6ct7qgg1o86] {
+    position:fixed !important;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+ }

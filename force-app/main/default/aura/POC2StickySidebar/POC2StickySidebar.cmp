@@ -1,0 +1,55 @@
+<!--
+  @description       : 
+  @author            : meide.dane@principal.com
+  @Team              : GBS
+  @last modified on  : 06-14-2024
+  @last modified by  : meide.dane@principal.com
+-->
+<aura:component implements="lightning:recordHomeTemplate" description="POC2StickySidebar">
+    <aura:attribute name="region_header" type="Aura.Component[]" description="header region"/>
+    <aura:attribute name="header" type="Aura.Component[]" description="header region"/>
+    <aura:attribute name="main" type="Aura.Component[]" description="Main region"/>
+    <aura:attribute name="sidebar" type="Aura.Component[]" description="Collapsible sidebar region"/>
+    <aura:attribute name="sidebar2" type="Aura.Component[]" description="Collapsible sidebar region"/>
+    <aura:attribute name="sidebar3" type="Aura.Component[]" description="Collapsible sidebar region"/>
+    <aura:attribute name="sidebar4" type="Aura.Component[]" description="Collapsible sidebar region"/>
+    <aura:attribute name="sidebar5" type="Aura.Component[]" description="Collapsible sidebar region"/>
+    <aura:attribute name="isSidebarCollapsed" type="Boolean" access="PRIVATE" default="false" />
+    <lightning:workspaceAPI aura:id="workspace"/>
+    <!-- <aura:handler event="aura:doneRendering" value="{!this}" action="{!c.doneRendering}"/> -->
+    <!-- <aura:handler name="init" value="{!this}" action="{!c.doInit}"/> -->
+    <aura:handler name="render" value="{!this}" action="{!c.onRender}"/>
+<div aura:id="c-container" class="container">
+    <div class="region-header">
+        <header class="region-header">{!v.region_header}</header>
+    </div>
+    
+    <div aura:id="c-header" class="header headerStyle">{!v.header}</div>
+
+    <Lightning:layout>
+       <lightning:layoutItem flexibility="auto">
+            <div class="mainStyle slds-var-m-top_x-small">{!v.main}</div>
+        </lightning:layoutItem>
+        <lightning:layoutItem  flexibility="no-flex">
+                <lightning:buttonIcon onclick="{!c.toggleSection}"
+                                      class="toggleStyle design-allow-interaction toggle slds-var-m-horizontal_xxx-small slds-var-m-top_x-small"
+                                      variant="border-filled"
+                                      iconName="{!v.isSidebarCollapsed ? 'utility:chevronleft' : 'utility:chevronright'}" 
+                                      alternativeText="{!v.isSidebarCollapsed ? 'Expand Sidebar' : 'Collapse Sidebar'}" />
+            </lightning:layoutItem>
+        <lightning:layoutItem class="{! v.isSidebarCollapsed ? ' slds-hide' : '' }" size="{! $Browser.isDesktop? '4' : '6'}">
+            <div aura:id="sidebar" class="sideStyle slds-var-m-top_x-small slds-var-p-bottom_x-large" >
+                <ul aura:id="scrollableContent" class="scrollable-content">
+                    <!-- Example static list items; replace with dynamic content as needed -->
+                    <li class="card">{!v.sidebar}</li>
+                    <li class="card">{!v.sidebar2}</li>
+                    <li class="card">{!v.sidebar3}</li>
+                    <li class="card">{!v.sidebar4}</li>
+                    <li class="card">{!v.sidebar5}</li>
+                    <!-- Repeat items to simulate infinite scrolling -->
+                </ul>
+            </div>
+        </lightning:layoutItem>
+    </Lightning:layout>
+</div>
+</aura:component>

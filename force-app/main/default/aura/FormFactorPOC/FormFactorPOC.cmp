@@ -1,0 +1,57 @@
+<!--
+  @description       : 
+  @author            : meide.dane@principal.com
+  @Team              : GBS
+  @last modified on  : 06-16-2024
+  @last modified by  : meide.dane@principal.com
+-->
+<aura:component implements="lightning:recordHomeTemplate" description="FormFactorPOC">
+    <aura:attribute name="header" type="Aura.Component[]" description="header region"/>
+    <aura:attribute name="main" type="Aura.Component[]" description="Main region"/>
+    <aura:attribute name="sidebar" type="Aura.Component[]" description="Collapsible sidebar region"/>
+    <aura:attribute name="isSidebarCollapsed" type="Boolean" access="PRIVATE" default="false" />
+    <aura:attribute name="isHeaderCollapsed" type="Boolean" access="PRIVATE" default="false" />
+    <lightning:workspaceAPI aura:id="workspace"/>
+    <!-- <aura:handler event="aura:doneRendering" action="{!c.doneRendering}"/> -->
+    <!-- <aura:handler name="init" value="{!this}" action="{!c.doInit}"/> -->
+    <!-- <aura:handler name="render" value="{!this}" action="{!c.onRender}"/> -->
+    
+    
+<div class="container">
+    <lightning:layout multipleRows="true">
+        <lightning:layoutItem class="{! v.isHeaderCollapsed ? ' slds-hide' : ' '}" size="12">
+            <div aura:id="head" class="header slds-card slds-has-top-magnet">{!v.header}</div>
+        </lightning:layoutItem>
+    </lightning:layout>
+    <lightning:layout>
+        <lightning:layoutItem class="headerToggleColumn" flexibility="auto">
+                <lightning:buttonIcon aura:id="toggleHeaderButton"
+                                      onclick="{!c.headerToggleSection}"
+                                      class="headerToggleStyle design-allow-interaction toggle"
+                                      variant="border-filled"
+                                      iconName="{!v.isHeaderCollapsed ? 'utility:chevrondown' : 'utility:chevronup'}" 
+                                      alternativeText="{!v.isHeaderCollapsed ? 'Expand Header' : 'Collapse Header'}" />
+        </lightning:layoutItem>
+    </lightning:layout>
+    <lightning:layout class="twoColumnsStyle">
+       <lightning:layoutItem flexibility="auto">
+        <div class="flipped mainStyle">
+                 <div class="flippedback">
+                   {!v.main}
+                </div>
+            </div>
+        </lightning:layoutItem>
+        <lightning:layoutItem  flexibility="no-flex">
+                <lightning:buttonIcon aura:id="toggleSectionButton" 
+                                      onclick="{!c.toggleSection}"
+                                      class="toggleStyle design-allow-interaction toggle"
+                                      variant="border-filled"
+                                      iconName="{!v.isSidebarCollapsed ? 'utility:chevronleft' : 'utility:chevronright'}" 
+                                      alternativeText="{!v.isSidebarCollapsed ? 'Expand Sidebar' : 'Collapse Sidebar'}" />
+            </lightning:layoutItem>
+        <lightning:layoutItem class="{! v.isSidebarCollapsed ? ' slds-hide' : ' ' }" size="{! v.isDesktop ? '4' : '12' }">
+            <div aura:id="sidebar" class="sideStyle" >{!v.sidebar}</div>
+        </lightning:layoutItem>
+    </lightning:layout>
+</div>
+</aura:component>

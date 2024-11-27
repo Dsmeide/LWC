@@ -1,0 +1,50 @@
+.page-layout {
+    position: relative;
+    height: 100vh;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #f3f2f2; /* Example background color */
+}
+
+.slds-p-around_medium {
+    margin-top: var(--lwc-spacingMedium);
+    margin-bottom: var(--lwc-spacingMedium);
+    margin-left: var(--lwc-spacingMedium);
+    margin-right: var(--lwc-spacingMedium);
+}
+
+.content-area {
+    margin-top: 5rem; /* Space for the header */
+}
+
+.main-column {
+    flex: 1;
+    margin-right: 1rem;
+}
+
+.toggle-button-container {
+    position: fixed;
+    top: 5rem; /* Adjust to match the header height */
+    right: calc(25% + 1rem); /* Adjust to position the toggle button correctly */
+    z-index: 1001; /* Ensuring it's above the sidebar but below the header */
+}
+
+.sidebar {
+    position: fixed;
+    top: 5rem; /* Adjust to match the header height */
+    right: 0;
+    bottom: 0;
+    width: 25%; /* Adjust based on your layout needs */
+    background-color: #ffffff; /* Example background color */
+    padding: var(--lwc-spacingMedium);
+    overflow-y: auto;
+    z-index: 900; /* Ensuring it's beneath the header */
+    margin-top: var(--lwc-spacingMedium);
+}

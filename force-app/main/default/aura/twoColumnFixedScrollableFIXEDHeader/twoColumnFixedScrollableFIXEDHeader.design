@@ -1,0 +1,7 @@
+<design:component label="twoColumnsFixedScrollableSidebarFixedHEADER">
+    <flexipage:template>
+        <flexipage:region name="header" defaultWidth="Large"/>
+        <flexipage:region name="main" defaultWidth="Medium" />
+        <flexipage:region name="sidebar" defaultWidth="Small" />
+    </flexipage:template>
+</design:component>

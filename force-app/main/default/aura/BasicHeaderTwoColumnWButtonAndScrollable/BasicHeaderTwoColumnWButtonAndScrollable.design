@@ -1,0 +1,22 @@
+<design:component label="basicHeaderTwoColumnWButtonAndScrollable">
+    <!--Allows for Large and Small devices-->
+    <design:supportedFormFactors>
+        <design:supportedFormFactor type="Large"/>
+        <design:supportedFormFactor type="Small"/>
+    </design:supportedFormFactors>
+
+    <!-- Controlls how the components should look/act in each region depending on formfactor -->
+    <flexipage:template>
+
+        <flexipage:region name="header" defaultWidth="Xlarge">
+            <flexipage:formfactor type="medium" width="small"/>
+        </flexipage:region>
+
+        <flexipage:region name="main" defaultWidth="Large">
+            <flexipage:formfactor type="medium" width="small"/>
+        </flexipage:region>
+
+        <flexipage:region name="sidebar" defaultWidth="SMALL"/>
+       
+    </flexipage:template>
+</design:component>

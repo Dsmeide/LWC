@@ -1,0 +1,40 @@
+<aura:component implements="lightning:recordHomeTemplate" description="twoColumnFixedScrollable">
+    <aura:attribute name="main" type="Aura.Component[]" description="Main region"/>
+    <aura:attribute name="sidebar" type="Aura.Component[]" description="Collapsible sidebar region"/>
+    <aura:attribute name="header" type="Aura.Component[]" description="Header region"/>
+    <aura:attribute name="isSidebarCollapsed" type="Boolean" access="PRIVATE" default="false" />
+
+    <!-- Main Layout Container -->
+    <div class="page-layout">
+        <!-- Header -->
+        <div class="header">
+            {!v.header}
+        </div>
+
+        <!-- Main Content -->
+        <div class="slds-grid slds-m-top_medium">
+            <!-- Main Section -->
+            <div class="slds-col" flexibility="auto">
+                <div>
+                    {!v.main}
+                </div>
+            </div>
+            
+            <!-- Toggle Button -->
+            <lightning:layoutItem flexibility="auto, no-grow" class="slds-var-m-right_x-large">
+                <lightning:buttonIcon onclick="{!c.toggleSection}"
+                                      class="slds-is-fixed slds-is-relative design-allow-interaction toggle slds-var-p-around_xxx-small"
+                                      variant="border-filled"
+                                      iconName="{!v.isSidebarCollapsed ? 'utility:chevronleft' : 'utility:chevronright'}" 
+                                      alternativeText="{!v.isSidebarCollapsed ? 'Expand Sidebar' : 'Collapse Sidebar'}" />
+            </lightning:layoutItem>
+            
+            <!-- Sidebar -->
+            <lightning:layoutItem flexibility="no-flex" class="{! v.isSidebarCollapsed ? 'slds-hide' : '' }" size="3">
+                <div class="slds-scrollable_y sidebar">
+                    {!v.sidebar}
+                </div>
+            </lightning:layoutItem>
+        </div>
+    </div>
+</aura:component>

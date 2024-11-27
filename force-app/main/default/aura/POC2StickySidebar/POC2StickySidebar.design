@@ -1,0 +1,13 @@
+<design:component label="POC2StickySidebar">
+    <flexipage:template>
+        <flexipage:region name="region_header" defaultWidth="LARGE"/>
+        <flexipage:region name="header" defaultWidth="LARGE"/>
+        <flexipage:region name="main" defaultWidth="LARGE" />
+        <flexipage:region name="sidebar" defaultWidth="SMALL"/>
+        <flexipage:region name="sidebar2" defaultWidth="SMALL"/>
+        <flexipage:region name="sidebar3" defaultWidth="SMALL"/>
+        <flexipage:region name="sidebar4" defaultWidth="SMALL"/>
+        <flexipage:region name="sidebar5" defaultWidth="SMALL"/>
+            
+    </flexipage:template>
+</design:component>

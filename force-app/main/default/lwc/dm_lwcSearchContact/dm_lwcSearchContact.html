@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title='Searched Contact'>
+        <lightning-input label="Enter the Search Text" type="search" value={searchkey} onchange={handleChange}></lightning-input>
+        <template if:true={contact.data}>
+            <template for:each={contact.data} for:item="con">
+                <p key={con.Id}>Name : {con.Name}</p>
+                <p key={con.Id}>Phone : {con.Phone}</p>
+                <p key={con.Id}>Email : {con.Email}</p>
+            </template>
+            <lightning-datatable columns={col} key-field="Id" data={contact.data} hide-checkbox-column="true"></lightning-datatable>
+        </template>
+        <template if:true={contact.error}>
+            Sorry, there was an error {contact.error}
+        </template>
+            
+    </lightning-card>
+</template>
